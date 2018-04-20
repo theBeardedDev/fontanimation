@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Font Animation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+      background: black;
+    }
+    #battery {
+      font-size: 500px;
+    }
+    .fa {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+
+</style>
+</head>
+<body>
+        <div id="battery" class="fa"></div>
+
+    <script>
+      // Battery Charge Animation
+      function chargeBattery(){
+        let battery = document.getElementById('battery');
+        battery.innerHTML = "&#xf244;";
+        setTimeout (function(){
+          battery.innerHTML = "&#xf243;";
+        }, 1000);
+        setTimeout (function(){
+          battery.innerHTML = "&#xf242;";
+        }, 2000);
+        setTimeout (function(){
+          battery.innerHTML = "&#xf241;";
+        }, 3000);
+        setTimeout (function(){
+          battery.innerHTML = "&#xf240;";
+        }, 4000);
+      }
+
+      // Run Animation
+      chargeBattery();
+
+      // Run Animation Every 5 seconds
+      setInterval (chargeBattery, 5000);
+    </script>
+</body>
+</html>
